@@ -1,0 +1,41 @@
+body {
+	font-family: 'Raleway', Arial, Helvetica, sans-serif;
+	background-color: #FAFAFA;
+}
+
+div {
+	border: 1px solid black;
+	margin: 5px;
+	overflow: hidden;
+}
+
+h1 {
+	text-align: center;
+}
+
+#panel {
+	margin: auto;
+	width: 850px;
+}
+
+#mainboard {
+	float: left;
+	width: 625px;
+	height: 385px;
+	padding-left: 15px;
+	padding-top: 15px;
+}
+
+#scoreboard {
+	float: right;
+	width: 150px;
+	height: 385px;
+}
+
+.column {
+	float: left;
+	width: 75px;
+	height: 350px;
+}
+
+
