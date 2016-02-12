@@ -1,12 +1,12 @@
 "use strict";
 
-var board; 
-var turn;
 
 (function() {
+	var board;
+	var turn;
 
 	window.onload = function() {
-		// setup event handlers for columns
+		// setup event handlers for cols
 		for (var i = 1; i <= 7; i++) {
 			document.getElementById("c" + i).onclick = drop;
 		}
@@ -28,6 +28,29 @@ var turn;
 	}
 
 	function drop() {
-		var piece = document.getElementById(this.id + "r1");
+		var row = getTopRow(this);
+		if (row) {
+			var piece = document.getElementById(this.id + "r" + row);
+			var col = this.id.charAt(1);
+			if (turn) {
+				board[col - 1][row - 1] = "red";
+				piece.className = "piece red";
+			} else {
+				board[col - 1][row - 1] = "black";
+				piece.className = "piece black";
+			}
+			turn = !turn;
+		}
+
+	}
+
+	function getTopRow(colDiv) {
+		var col = colDiv.id.charAt(1);
+		for (var i = 1; i <= board[col - 1].length; i++) {
+			if (board[col - 1][i - 1] == 0) {
+				return i;
+			}
+		}
+		return null;
 	}
 })();

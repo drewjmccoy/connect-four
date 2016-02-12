@@ -47,6 +47,16 @@ h1 {
 .piece {
 	height: 50px;
 	width: 63px;
+}
+
+.empty {
 	background-color: #FFFFFF;
 }
 
+.red {
+	background-color: red;
+}
+
+.black {
+	background-color: black;
+}
